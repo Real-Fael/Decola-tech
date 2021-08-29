@@ -4,8 +4,8 @@
 
 Projeto modificado apartir do projeto inicial o mesmo pode ser acessado pelo primeiro commit realizado.
 
-Corrigi bugs e erros.
-Corrigi abstrações.
-Separei códigos repetidos.
-Adicionei novos métodos.
+* Corrigi bugs e erros.
+* Corrigi abstrações.
+* Separei códigos repetidos.
+* Adicionei novos métodos.
 
