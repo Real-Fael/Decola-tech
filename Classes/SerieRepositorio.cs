@@ -14,7 +14,15 @@ namespace DIO.Series
 
 		public void Exclui(int id)
 		{
+			if (id>= listaSerie.Count || id<0) //tratando erro de acessar posições inválidas no vetor
+				throw new ArgumentOutOfRangeException(" item nao existe na lista de séries");
 			listaSerie[id].Excluir();
+		}
+
+		public void Restaurar(int id){
+			if (id>= listaSerie.Count || id<0) //tratando erro de acessar posições inválidas no vetor
+				throw new ArgumentOutOfRangeException(" item nao existe na lista de séries");
+			listaSerie[id].Restaurar();
 		}
 
 		public void Insere(Serie objeto)
@@ -22,9 +30,21 @@ namespace DIO.Series
 			listaSerie.Add(objeto);
 		}
 
-		public List<Serie> Lista()
+		public string listarElementos() //com este método mantemos o listaSerie privada
 		{
-			return listaSerie;
+			
+			if (listaSerie.Count == 0)  return "Nenhuma série cadastrada.";
+    
+			string dadosSerie="";
+            foreach (var serie in listaSerie)
+            {
+
+
+                dadosSerie+= $"#ID {serie.retornaId()}: - {serie.retornaTitulo()} {(serie.retornaExcluido() ? "*Excluído*" : " ")} \r\n";
+            }
+			return dadosSerie;
+
+
 		}
 
 		public int ProximoId()
@@ -34,6 +54,8 @@ namespace DIO.Series
 
 		public Serie RetornaPorId(int id)
 		{
+			if (id>= listaSerie.Count || id<0) //tratando erro de acessar posições inválidas no vetor
+				throw new ArgumentOutOfRangeException(" item nao existe na lista de séries");
 			return listaSerie[id];
 		}
 	}
