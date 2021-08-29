@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using DIO.Series.Interfaces;
-using System.Runtime.Serialization.Json;
+
 
 namespace DIO.Series
 {
@@ -9,9 +9,7 @@ namespace DIO.Series
 	{
         private List<Serie> listaSerie = new List<Serie>();
 
-		public void Serializar(){
-			
-		}
+
 		public void Atualiza(int id, Serie objeto)
 		{
 			listaSerie[id] = objeto;
